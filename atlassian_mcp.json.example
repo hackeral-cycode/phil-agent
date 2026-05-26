@@ -1,8 +1,8 @@
 {
   "mcpServers": {
     "cycode": {
-      "command": "/opt/homebrew/bin/cycode",
-      "args": ["mcp"]
+      "type": "http",
+      "url": "https://mcp.cycode.com"
     },
     "atlassian": {
       "command": "uvx",

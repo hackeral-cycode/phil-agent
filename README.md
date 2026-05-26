@@ -13,7 +13,6 @@ Use it two ways:
 | Tool | Purpose | Install |
 |------|---------|---------|
 | [Claude Code](https://claude.ai/code) | The CLI that runs Phil | `npm install -g @anthropic-ai/claude-code` |
-| [Cycode CLI](https://github.com/cycodehq/cycode-cli) | Cycode scanner MCP | `brew install cycode` |
 | `uvx` | Runs the Atlassian MCP server | `brew install uv` |
 | [gh CLI](https://cli.github.com) | Reads docs from GitHub (optional) | `brew install gh` |
 

@@ -3,3 +3,4 @@ atlassian_mcp.json
 phil_messages.json
 scrape_slack.py
 phil_agent.py
+.claude/
