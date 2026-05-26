@@ -1,0 +1,5 @@
+atlassian_mcp.json
+.slack_token
+phil_messages.json
+scrape_slack.py
+phil_agent.py
