@@ -43,9 +43,9 @@ mkdir -p ~/.claude/skills/phil
 cp skill/SKILL.md ~/.claude/skills/phil/SKILL.md
 ```
 
-Phil reads from a shared crawled snapshot of docs.cycode.com at [`hackeral-cycode/cycode-docs-crawler`](https://github.com/hackeral-cycode/cycode-docs-crawler). Make sure you have access to that repo and `gh` is authenticated (step 5 below).
+**Restart Claude Code**, then type `/phil` in any session to invoke Phil directly — no need to run `phil.sh`. This is the recommended way to use Phil day-to-day.
 
-Restart Claude Code, then type `/phil` in any session.
+Phil reads from a shared crawled snapshot of docs.cycode.com at [`hackeral-cycode/cycode-docs-crawler`](https://github.com/hackeral-cycode/cycode-docs-crawler). Make sure you have access to that repo and `gh` is authenticated (step 5 below).
 
 ### 5. (Optional) Authenticate gh CLI
 
