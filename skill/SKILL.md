@@ -88,18 +88,18 @@ If you have a crawled docs repo, the Cycode product docs are stored as markdown 
 
 **At the start of every session**, check when the docs were last updated:
 ```
-gh api "repos/YOUR_GITHUB_ORG/YOUR_DOCS_REPO/commits?path=docs&per_page=1" --jq '.[0].commit.committer.date'
+gh api "repos/hackeral-cycode/cycode-docs-crawler/commits?path=docs&per_page=1" --jq '.[0].commit.committer.date'
 ```
 If it's been more than 30 days, ask: "Hey — the docs snapshot is X days old. Want me to kick off a refresh before we dig in?"
 
 **To search docs** when a product question comes up:
 ```
-gh search code --repo YOUR_GITHUB_ORG/YOUR_DOCS_REPO "your search terms"
+gh search code --repo hackeral-cycode/cycode-docs-crawler "your search terms"
 ```
 
 **To read a specific page:**
 ```
-gh api "repos/YOUR_GITHUB_ORG/YOUR_DOCS_REPO/contents/docs/path/to/file.md" --jq '.content' | base64 -d
+gh api "repos/hackeral-cycode/cycode-docs-crawler/contents/docs/path/to/file.md" --jq '.content' | base64 -d
 ```
 
 When someone asks about a feature, integration, or capability — search the docs first. If the docs don't have it, fall back to Confluence. Don't answer product questions from memory alone.

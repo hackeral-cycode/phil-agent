@@ -53,7 +53,7 @@ mkdir -p ~/.claude/skills/phil
 cp skill/SKILL.md ~/.claude/skills/phil/SKILL.md
 ```
 
-If you have a [crawled docs repo](#optional-docs-repo-integration), open `~/.claude/skills/phil/SKILL.md` and replace `YOUR_GITHUB_ORG/YOUR_DOCS_REPO` with your repo (e.g. `myorg/cycode-docs`). If you don't, leave the placeholders — Phil will skip the docs check gracefully.
+Phil reads from a shared crawled snapshot of docs.cycode.com at [`hackeral-cycode/cycode-docs-crawler`](https://github.com/hackeral-cycode/cycode-docs-crawler). Make sure you have access to that repo and `gh` is authenticated (step 4 below).
 
 Restart Claude Code, then type `/phil` in any session.
 
@@ -65,17 +65,10 @@ Restart Claude Code, then type `/phil` in any session.
 
 This opens a dedicated Claude Code session as Phil with all tools pre-loaded.
 
----
+### 4. Authenticate gh CLI
 
-## Optional: Docs Repo Integration
+Phil searches the shared docs snapshot at [`hackeral-cycode/cycode-docs-crawler`](https://github.com/hackeral-cycode/cycode-docs-crawler). Make sure you have access to that repo and are logged in:
 
-Phil can search a GitHub repo of crawled product docs and prompt you to refresh them if they're more than 30 days old.
-
-To set this up, you need a repo where each page of your docs site is stored as a markdown file under a `docs/` folder. The [cycode-docs-crawler](https://github.com/hackeral-cycode/cycode-docs-crawler) project can generate this automatically using Playwright.
-
-Once you have a docs repo, update the `YOUR_GITHUB_ORG/YOUR_DOCS_REPO` placeholder in `~/.claude/skills/phil/SKILL.md`.
-
-Make sure `gh` is authenticated:
 ```bash
 gh auth login
 ```
