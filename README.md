@@ -14,6 +14,7 @@ Use it two ways:
 |------|---------|---------|
 | [Claude Code](https://claude.ai/code) | The CLI that runs Phil | `npm install -g @anthropic-ai/claude-code` |
 | `uvx` | Runs the Atlassian MCP server | `brew install uv` |
+| Cycode MCP | Live platform data (findings, inventory, reports) | OAuth via `mcp.cycode.com` — no install, auth on first use |
 | [gh CLI](https://cli.github.com) | Reads docs from GitHub (optional) | `brew install gh` |
 
 ---
@@ -39,11 +40,9 @@ Edit `atlassian_mcp.json` and fill in your values:
 - `your.email@yourcompany.com` → your Atlassian account email
 - `YOUR_ATLASSIAN_API_TOKEN` → generate one at [id.atlassian.com/manage-profile/security/api-tokens](https://id.atlassian.com/manage-profile/security/api-tokens)
 
-### 3. Authenticate the Cycode CLI
+### 3. Authenticate the Cycode MCP
 
-```bash
-cycode auth login
-```
+The Cycode MCP connects to `https://mcp.cycode.com` using OAuth — no CLI install needed. On the first `/phil` session, Claude Code will open a browser window to approve the Cycode connection. After that it's automatic.
 
 ### 4. Install the `/phil` slash command
 
