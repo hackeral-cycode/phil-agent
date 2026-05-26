@@ -36,7 +36,7 @@ In Claude Code, type `/mcp` and connect **Atlassian**. This uses OAuth — no AP
 
 The Cycode MCP connects to `https://mcp.cycode.com` using OAuth — no CLI install needed. On the first `/phil` session, Claude Code will open a browser window to approve the Cycode connection. After that it's automatic.
 
-### 4. Install the `/phil` slash command
+### 4. Add `/phil` to Claude Code
 
 ```bash
 mkdir -p ~/.claude/skills/phil
