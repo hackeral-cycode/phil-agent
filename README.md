@@ -13,7 +13,7 @@ Use it two ways:
 | Tool | Purpose | Install |
 |------|---------|---------|
 | [Claude Code](https://claude.ai/code) | The CLI that runs Phil | `npm install -g @anthropic-ai/claude-code` |
-| `uvx` | Runs the Atlassian MCP server | `brew install uv` |
+| Atlassian MCP | Confluence + Jira access | OAuth via Claude Code — no install, auth on first use |
 | Cycode MCP | Live platform data (findings, inventory, reports) | OAuth via `mcp.cycode.com` — no install, auth on first use |
 | [gh CLI](https://cli.github.com) | Reads docs from GitHub (optional) | `brew install gh` |
 
@@ -28,17 +28,9 @@ git clone https://github.com/hackeral-cycode/phil-agent.git
 cd phil-agent
 ```
 
-### 2. Configure Atlassian credentials
+### 2. Authenticate Atlassian
 
-```bash
-cp atlassian_mcp.json.example atlassian_mcp.json
-```
-
-Edit `atlassian_mcp.json` and fill in your values:
-
-- `YOUR_ORG` → your Atlassian org (e.g. `mycompany`)
-- `your.email@yourcompany.com` → your Atlassian account email
-- `YOUR_ATLASSIAN_API_TOKEN` → generate one at [id.atlassian.com/manage-profile/security/api-tokens](https://id.atlassian.com/manage-profile/security/api-tokens)
+In Claude Code, type `/mcp` and connect **Atlassian**. This uses OAuth — no API tokens or config files needed. You'll be prompted to approve access in the browser once; after that it's automatic.
 
 ### 3. Authenticate the Cycode MCP
 
@@ -51,25 +43,25 @@ mkdir -p ~/.claude/skills/phil
 cp skill/SKILL.md ~/.claude/skills/phil/SKILL.md
 ```
 
-Phil reads from a shared crawled snapshot of docs.cycode.com at [`hackeral-cycode/cycode-docs-crawler`](https://github.com/hackeral-cycode/cycode-docs-crawler). Make sure you have access to that repo and `gh` is authenticated (step 4 below).
+Phil reads from a shared crawled snapshot of docs.cycode.com at [`hackeral-cycode/cycode-docs-crawler`](https://github.com/hackeral-cycode/cycode-docs-crawler). Make sure you have access to that repo and `gh` is authenticated (step 5 below).
 
 Restart Claude Code, then type `/phil` in any session.
 
-### 5. (Optional) Run as a standalone session
-
-```bash
-./phil.sh
-```
-
-This opens a dedicated Claude Code session as Phil with all tools pre-loaded.
-
-### 4. Authenticate gh CLI
+### 5. (Optional) Authenticate gh CLI
 
 Phil searches the shared docs snapshot at [`hackeral-cycode/cycode-docs-crawler`](https://github.com/hackeral-cycode/cycode-docs-crawler). Make sure you have access to that repo and are logged in:
 
 ```bash
 gh auth login
 ```
+
+### 6. (Optional) Run as a standalone session
+
+```bash
+./phil.sh
+```
+
+This opens a dedicated Claude Code session as Phil with all tools pre-loaded.
 
 ---
 
